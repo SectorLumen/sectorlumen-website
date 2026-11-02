@@ -44,7 +44,7 @@ body{--hero-top:clamp(88px,20svh,200px);position:relative;isolation:isolate;over
 @media(min-width:721px) and (max-width:1100px){.scene-frame{width:calc(100% - 112px);mask-image:linear-gradient(to right,transparent 56%,black 72%)}}
 /* Mobile: anchor the artwork to the same content column, independent of viewport width. */
 @media(max-width:720px){
-body{--mobile-gutter:clamp(24px,7.5vw,32px);--mobile-top:clamp(40px,7svh,64px);--mobile-symbol:clamp(112px,30vw,120px);padding:var(--mobile-top) max(var(--mobile-gutter),env(safe-area-inset-right)) max(40px,env(safe-area-inset-bottom)) max(var(--mobile-gutter),env(safe-area-inset-left));background:linear-gradient(150deg,#11243A,#0D1C2E 50%,#192F45)}
+body{--mobile-gutter:clamp(28px,7.5vw,32px);--mobile-top:clamp(40px,7svh,64px);--mobile-symbol:clamp(112px,30vw,120px);padding:var(--mobile-top) max(var(--mobile-gutter),env(safe-area-inset-right)) max(40px,env(safe-area-inset-bottom)) max(var(--mobile-gutter),env(safe-area-inset-left));background:linear-gradient(150deg,#11243A,#0D1C2E 50%,#192F45)}
 .identity{--symbol-size:var(--mobile-symbol);gap:32px}
 h1{font-size:clamp(34px,9vw,39px);margin-bottom:20px}
 .description{max-width:370px}.contact{margin-top:28px;min-height:44px;display:inline-flex;align-items:center;max-width:100%;overflow-wrap:anywhere}
