@@ -28,7 +28,7 @@ The visible desktop symbol is 275 px wide and approximately 266.46 px high. Its 
 
 The default column gap is 110 px. At 1100 px viewport width and below, the gap becomes 60 px and the symbol scales between 200 and 275 px using `clamp(200px, 25vw, 275px)`. Desktop page gutters use `clamp(56px, 6.25vw, 80px)`; this keeps the normal W/4 minimum clear space around the visible gold. The description keeps its deliberate two-line break throughout the side-by-side layout.
 
-At 720 px and below, stack the 128 px-wide symbol above the text. Both share the same left edge. The centred content group is at most 440 px wide, with at least 32 px outer gutters and a 36 px gap between symbol and text. Reset the logo inset to zero. Top padding is `clamp(48px, 8svh, 72px)` and bottom padding is 48 px, keeping the mobile composition higher as well. Let the description wrap naturally in this layout.
+At 720 px and below, stack the symbol above the text, sharing one left edge and a 32 px gap. The centred content group is at most 440 px wide. Gutters are `clamp(24px, 7.5vw, 32px)` with safe-area inset protection. Logo width is `clamp(112px, 30vw, 120px)` with its native aspect ratio. Top padding is `clamp(40px, 7svh, 64px)` and bottom padding is at least 40 px. Reset the logo inset to zero and let the description wrap naturally. Contact and information links have a minimum 44 px tap height. Allow the links to wrap rather than overflow narrow or enlarged layouts. Short landscape viewports use the compact two-column exception documented below.
 
 ## Favicon / compact navy tile — final midpoint
 
@@ -59,11 +59,11 @@ These are CSS angles: 0° points upward and 90° points right. Do not reinterpre
 
 ### Decorative silhouette
 
-Use the exact fitted symbol as a monochrome mask. This is decorative secondary geometry, not a replacement for the gold logo. Its fill is `linear-gradient(135deg, #354D63, #20384F)`, with opacity 0.48 desktop and 0.44 mobile. Desktop correction: multiply the silhouette by a vertical alpha fade, measured from its own top: 100% at 0%, 82% at 20%, 42% at 45%, 12% at 70%, and fully transparent at 92% of its height. CSS uses alpha bytes FF/D1/6B/1F/00; the SVG exports use those exact values. This makes the lower edge disappear even on tall screens. Keep the gold foreground logo fully opaque. Mobile retains its existing top-band fade. No blur, animation or distortion is applied.
+Use the exact fitted symbol as a monochrome mask. This is decorative secondary geometry, not a replacement for the gold logo. Its fill is `linear-gradient(135deg, #354D63, #20384F)`, with opacity 0.48 desktop and 0.28 mobile. Desktop correction: multiply the silhouette by a vertical alpha fade, measured from its own top: 100% at 0%, 82% at 20%, 42% at 45%, 12% at 70%, and fully transparent at 92% of its height. CSS uses alpha bytes FF/D1/6B/1F/00; the SVG exports use those exact values. This makes the lower edge disappear even on tall screens. Keep the gold foreground logo fully opaque. Mobile uses a softer top-band fade starting at 45% of the band height. No blur, animation or distortion is applied.
 
 On a 1440 × 900 canvas, the decorative mark is 720 px wide at (805, 276), cropped at the right and bottom edges of the canvas. It preserves the symbol’s native aspect ratio. The foreground gold logo remains 275 px wide at (965, 206.5).
 
-On a 390 × 844 canvas, the decorative mark is 330 px wide at (103, 27). The foreground gold logo is 128 px wide at (32, 67.52).
+On a 390 × 844 canvas, the decorative mark is 330 px wide at (101.25, 22). The foreground gold logo is 117 px wide at (29.25, 59.08). Anchor mobile decoration to the centred content column, rather than the viewport right edge, to preserve its relationship to the logo across phone widths.
 
 ### Worksheet geometry
 
@@ -71,19 +71,19 @@ Desktop grid: 96 × 40 px cells with 1 px rules in `#A0BBD21B`. Its 768 × 640 p
 
 The selected-cell accent is 192 × 40 px at (869, 526.5), border `#94AEC32B`, fill `#8AA9C307`. Its 4 × 4 px handle is `#8DA8BB`. It is a decorative reference to worksheet geometry, not a functional control.
 
-Mobile grid: 64 × 28 px cells in a 480 × 260 px field at (-42, 35). Fade with `radial-gradient(ellipse at 50% 35%, black 15%, transparent 80%)`. The accent is 128 × 28 px at (193, 175).
+Mobile grid: 64 × 28 px cells in a 480 × 260 px field at (-44.75, 30). Fade with `radial-gradient(ellipse at 50% 35%, black 15%, transparent 80%)`. Apply overall grid opacity 0.6. The accent is 128 × 28 px at (189.25, 153), with overall opacity 0.55.
 
 The final two hex digits above are alpha values, not separate RGB colours. Exact tokens and all gold-gradient stops are supplied in `guidelines/tokens.json`.
 
 ### Responsive placement
 
-The background and foreground share the same centred 1040 px composition. At 721–1100 px, fade the decorative frame from transparent through 56% of its width to fully visible at 72%, keeping geometry out of the copy. At 720 px and below, confine the decoration to a top band of `clamp(48px, 8svh, 72px) + 160px`; fade its last 20% to transparent. The artwork should disappear before the title.
+The background and foreground share the same centred 1040 px composition. At 721–1100 px, fade the decorative frame from transparent through 56% of its width to fully visible at 72%, keeping geometry out of the copy. At 720 px and below, confine decoration to a top band equal to the mobile top padding + visible logo height + 24 px. Start fading at 45% and reach transparency at 100%. The artwork disappears 8 px before the title line box. Use the same centred maximum-440 px content column as the foreground. For short landscape viewports (width ≤960 px and height ≤500 px), use a compact two-column layout with a 112 px logo and omit the decorative layer.
 
 The provided CSS is the canonical responsive implementation. Desktop/mobile SVGs are fixed reference compositions at 1440 × 900 and 390 × 844. Preserve their viewBox and aspect ratio. For a differently proportioned wizard panel, crop deliberately or adapt the CSS composition; do not stretch the SVG unevenly or blindly scale a desktop composition into a phone.
 
 ## Typography and hierarchy
 
-Wordmark/title: Arial Regular (400), with Helvetica and sans-serif fallbacks. Desktop landing title: 48 px, line-height 1.12, letter-spacing -1.25 px. Mobile title: 39 px, letter-spacing -0.8 px. The text SVG wordmarks remain editable text and require Arial for an exact rendering; they are not outlined artwork.
+Wordmark/title: Arial Regular (400), with Helvetica and sans-serif fallbacks. Desktop landing title: 48 px, line-height 1.12, letter-spacing -1.25 px. Mobile title: `clamp(34px, 9vw, 39px)`, letter-spacing -0.8 px. The text SVG wordmarks remain editable text and require Arial for an exact rendering; they are not outlined artwork.
 
 Foreground text: `#F5F6F8`. Supporting text: `#C3CCD6`. Muted links: `#ADB9C7`. Description: 19 px desktop / 17 px mobile, weight 400, line-height 1.6. Do not turn the company title into a heavy display headline.
 
