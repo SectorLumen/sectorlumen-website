@@ -16,13 +16,19 @@ Let W be the width of the visible gold artwork, excluding transparent SVG bounds
 
 Keep at least W/4 of clear space on every side of the visible symbol, measured to other content or a container edge. This is a minimum exclusion zone, not a requirement to add padding inside every SVG. Larger layout spacing is appropriate where needed.
 
-On the landing page, the visible symbol is 175 CSS px wide, preserving the visible size of the preceding 190 px image with transparent bounds. Minimum clear space is therefore approximately 44 px.
+### Landing composition
 
-The text-and-symbol group uses a centred 940 px maximum-width grid. The visible gold right edge sits on the grid’s right edge; the title and copy begin at its left edge. This produces equal outer margins instead of shifting the symbol inside an oversized right column. The minimum page gutter is 48 px above the stacked breakpoint. Do not use independent horizontal transforms to reposition the symbol.
+Treat the text and gold symbol as one composition. Do not change logo size, content width or vertical placement independently without reviewing the complete page.
 
-The visible gold top edge aligns with the visible top of the SectorLumen title. A 26.5 CSS px top inset compensates for the copy’s 18 px vertical padding and the 48 px Arial title’s line box. Keep the title and symbol on this shared visual top line, not merely on equal element-box coordinates.
+The desktop composition is horizontally centred with a maximum width of 1040 CSS px. The title/copy start at its left edge and the visible gold ends at its right edge. At a 1440 px viewport this produces 200 px outer margins; at 1728 px it produces 344 px. These are deliberate whitespace choices for this minimal identity page, not a universal definition of an ideal margin.
 
-At 680 CSS px and below, the symbol stacks above the text at 110 CSS px of visible gold, with a 42 px row gap and 28 px minimum page gutter. The symbol and copy share the same left edge; the top inset resets to zero. The centred content group is at most 440 px wide. Minimum clear space is approximately 28 px.
+Place the composition toward the upper part of the viewport: body top padding is `clamp(88px, 20svh, 200px)`. The copy includes 18 px vertical padding, and its visible title begins approximately another 8.5 px into the title line box. This puts the visible top near 23% of a typical 900 px-tall viewport, avoiding the previously low, vertically centred placement. Bottom padding remains at least 64 px; short viewports may scroll naturally.
+
+The visible desktop symbol is 275 px wide and approximately 266.46 px high. Its 26.5 px top inset aligns the gold top with the visible title top; its bottom sits near the bottom of the information links. This ties its size to the complete left-hand content rather than treating it as a floating decorative icon. Preserve the symbol’s native aspect ratio.
+
+The default column gap is 110 px. At 1100 px viewport width and below, the gap becomes 60 px and the symbol scales between 200 and 275 px using `clamp(200px, 25vw, 275px)`. Desktop page gutters use `clamp(56px, 6.25vw, 80px)`; this keeps the normal W/4 minimum clear space around the visible gold. The description keeps its deliberate two-line break throughout the side-by-side layout.
+
+At 720 px and below, stack the 128 px-wide symbol above the text. Both share the same left edge. The centred content group is at most 440 px wide, with at least 32 px outer gutters and a 36 px gap between symbol and text. Reset the logo inset to zero. Top padding is `clamp(48px, 8svh, 72px)` and bottom padding is 48 px, keeping the mobile composition higher as well. Let the description wrap naturally in this layout.
 
 ## Favicon / compact tile exception
 
