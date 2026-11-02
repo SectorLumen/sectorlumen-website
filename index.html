@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0D1C2E">
+  <meta name="description" content="SectorLumen — Data provenance infrastructure for CRE underwriting and portfolio management.">
+  <meta property="og:title" content="SectorLumen">
+  <meta property="og:description" content="Data provenance infrastructure for CRE underwriting and portfolio management.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sectorlumen.com/">
+  <title>SectorLumen</title>
+  <link rel="canonical" href="https://sectorlumen.com/">
+  <link rel="icon" type="image/svg+xml" href="assets/sectorlumen-symbol.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="identity" aria-labelledby="company-name">
+    <section class="identity-copy">
+      <h1 id="company-name">SectorLumen</h1>
+      <p class="description">Data provenance infrastructure for CRE<br class="desktop-break"> underwriting and portfolio management.</p>
+      <a class="contact" href="mailto:grisha@sectorlumen.com">grisha@sectorlumen.com</a>
+      <nav class="details" aria-label="Further information">
+        <a href="https://koksharov.com">Grisha Koksharov</a>
+        <button type="button" id="company-details" aria-haspopup="dialog">Company details</button>
+      </nav>
+    </section>
+    <div class="identity-symbol">
+      <img src="assets/sectorlumen-symbol.svg" alt="SectorLumen gold symbol" width="230" height="222" fetchpriority="high">
+    </div>
+  </main>
+  <dialog id="company-dialog" aria-labelledby="details-title">
+    <div class="dialog-header">
+      <h2 id="details-title">Company details</h2>
+      <button type="button" class="close-icon" aria-label="Close company details"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+    </div>
+    <div class="dialog-content">
+      <p class="legal-name">SectorLumen Ltd</p>
+      <p class="legal-type">Private company limited by shares,<br>registered in England and Wales.</p>
+      <dl>
+        <div><dt>Company number</dt><dd>17130894</dd></div>
+        <div><dt>Registered office</dt><dd>Flat 1 333 Sydenham Road<br>Croydon, England<br>CR0 2EL</dd></div>
+      </dl>
+      <a class="register-link" href="https://find-and-update.company-information.service.gov.uk/company/17130894" target="_blank" rel="noopener noreferrer">View Companies House record <span aria-hidden="true">↗</span></a>
+    </div>
+    <form method="dialog" class="dialog-footer"><button class="close-button">Close</button></form>
+  </dialog>
+</body>
+</html>
