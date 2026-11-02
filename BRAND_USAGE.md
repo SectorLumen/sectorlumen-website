@@ -30,16 +30,76 @@ The default column gap is 110 px. At 1100 px viewport width and below, the gap b
 
 At 720 px and below, stack the 128 px-wide symbol above the text. Both share the same left edge. The centred content group is at most 440 px wide, with at least 32 px outer gutters and a 36 px gap between symbol and text. Reset the logo inset to zero. Top padding is `clamp(48px, 8svh, 72px)` and bottom padding is 48 px, keeping the mobile composition higher as well. Let the description wrap naturally in this layout.
 
-## Favicon / compact tile exception
+## Favicon / compact navy tile — final midpoint
 
-Updated on 2 November 2026 at the user's request to match the neighbouring wizard prototype’s application icon (`dist/assets/sectorlumen-app.svg`). This supersedes the earlier 12.5% canvas-padding rule.
+Approved on 2 November 2026. This supersedes both the original 75% visible-gold width and the neighbouring prototype’s approximately 59.47% visible-gold width. The new visible-gold width is **67.25% of the canvas**, approximately the midpoint.
 
-Use a 96 × 96 navy canvas. Place the supplied symbol’s original `398 340 230 222` viewBox in a 62 × 62 box at x=17, y=17, with uniform scaling and centred aspect-ratio fitting. This reproduces the application icon’s spacing exactly, including the supplied artwork’s transparent bounds. The visible gold occupies approximately 59.47% of the navy square’s width and 57.62% of its height: roughly 20% navy margin on each side and 21% above and below.
+Use a 96 × 96 navy canvas. Place the fitted symbol viewBox `406.1105 347.8436 211.7854 205.212` in a 64.56 × 64.56 square at (15.72, 15.72), preserving its aspect ratio. The visible gold width is 64.56 px. Horizontal padding is 16.375% per side. The slightly wider-than-tall mark gives approximately 17.42% padding above and below. Centre the visible artwork, not the original padded viewBox.
 
-| Canvas | Visible gold width | Approximate side margin |
+| Canvas | Visible gold width | Side padding |
 | --- | --- | --- |
-| 16 × 16 px | 9.51 px | 3.2 px |
-| 32 × 32 px | 19.03 px | 6.5 px |
-| 64 × 64 px | 38.06 px | 13 px |
+| 16 × 16 | 10.76 px | 2.62 px |
+| 32 × 32 | 21.52 px | 5.24 px |
+| 64 × 64 | 43.04 px | 10.48 px |
+| 96 × 96 | 64.56 px | 15.72 px |
 
-`assets/favicon.svg` implements this using the existing gold paths and gradients. The navy remains `#0D1C2E`, and the existing sharp background corners are preserved. Do not apply extra padding to the complete favicon. This rule concerns compact navy tiles; the landing-page hero symbol size and geometry are unchanged.
+Keep the navy background `#0D1C2E` fixed across light/dark themes. Preserve sharp square corners. Do not add extra internal padding to the complete tile. `sectorlumen-favicon.svg` and `sectorlumen-app-tile.svg` are the same padded artwork for their respective uses. CSS dimensions set the canvas size; the internal padding is already built in.
+
+## Approved SS3 gradient and geometric background
+
+SS3 is the approved production direction. The more aggressive SSS studies are not part of the approved brand pack.
+
+### Canvas
+
+Desktop: `linear-gradient(117deg, #0D1C2E 28%, #10243B 64%, #1B334A 100%)`.
+
+Mobile, at 720 px and below: `linear-gradient(150deg, #11243A 0%, #0D1C2E 50%, #192F45 100%)`.
+
+These are CSS angles: 0° points upward and 90° points right. Do not reinterpret them as SVG coordinate angles; use the provided SVG exports or explicit SVG gradient endpoints.
+
+### Decorative silhouette
+
+Use the exact fitted symbol as a monochrome mask. This is decorative secondary geometry, not a replacement for the gold logo. Its fill is `linear-gradient(135deg, #354D63, #20384F)`, with opacity 0.48 desktop and 0.44 mobile. No blur, animation or distortion is applied in approved SS3.
+
+On a 1440 × 900 canvas, the decorative mark is 720 px wide at (805, 276), cropped at the right and bottom edges of the canvas. It preserves the symbol’s native aspect ratio. The foreground gold logo remains 275 px wide at (965, 206.5).
+
+On a 390 × 844 canvas, the decorative mark is 330 px wide at (103, 27). The foreground gold logo is 128 px wide at (32, 67.52).
+
+### Worksheet geometry
+
+Desktop grid: 96 × 40 px cells with 1 px rules in `#A0BBD21B`. Its 768 × 640 px field starts at (773, 166.5) on the desktop reference. Fade with `radial-gradient(ellipse at 47% 37%, black 20%, transparent 73%)` as a mask.
+
+The selected-cell accent is 192 × 40 px at (869, 526.5), border `#94AEC32B`, fill `#8AA9C307`. Its 4 × 4 px handle is `#8DA8BB`. It is a decorative reference to worksheet geometry, not a functional control.
+
+Mobile grid: 64 × 28 px cells in a 480 × 260 px field at (-42, 35). Fade with `radial-gradient(ellipse at 50% 35%, black 15%, transparent 80%)`. The accent is 128 × 28 px at (193, 175).
+
+The final two hex digits above are alpha values, not separate RGB colours. Exact tokens and all gold-gradient stops are supplied in `guidelines/tokens.json`.
+
+### Responsive placement
+
+The background and foreground share the same centred 1040 px composition. At 721–1100 px, fade the decorative frame from transparent through 56% of its width to fully visible at 72%, keeping geometry out of the copy. At 720 px and below, confine the decoration to a top band of `clamp(48px, 8svh, 72px) + 160px`; fade its last 20% to transparent. The artwork should disappear before the title.
+
+The provided CSS is the canonical responsive implementation. Desktop/mobile SVGs are fixed reference compositions at 1440 × 900 and 390 × 844. Preserve their viewBox and aspect ratio. For a differently proportioned wizard panel, crop deliberately or adapt the CSS composition; do not stretch the SVG unevenly or blindly scale a desktop composition into a phone.
+
+## Typography and hierarchy
+
+Wordmark/title: Arial Regular (400), with Helvetica and sans-serif fallbacks. Desktop landing title: 48 px, line-height 1.12, letter-spacing -1.25 px. Mobile title: 39 px, letter-spacing -0.8 px. The text SVG wordmarks remain editable text and require Arial for an exact rendering; they are not outlined artwork.
+
+Foreground text: `#F5F6F8`. Supporting text: `#C3CCD6`. Muted links: `#ADB9C7`. Description: 19 px desktop / 17 px mobile, weight 400, line-height 1.6. Do not turn the company title into a heavy display headline.
+
+## Wizard handoff
+
+Use `logo/sectorlumen-app-tile.svg` for a navy application tile and `logo/sectorlumen-symbol-fitted.svg` when the symbol needs no surrounding tile. Set size on the complete tile rather than adding padding inside it again. Keep the full-colour gold mark as the primary identity.
+
+Use the SS3 background or overlay as optional decorative artwork in introduction/splash/cover regions. Keep worksheet data, file names, form labels and actions on stable readable surfaces. Do not place the decorative grid under dense financial data or make it resemble an interactive worksheet when it is not one. Decorative background images should be ignored by assistive technology (`aria-hidden="true"` or CSS backgrounds); actionable images need meaningful labels.
+
+Use the supplied `*-background.svg` for a complete navy artwork; `*-overlay.svg` is transparent and assumes a dark navy/SS3 background. `*-with-symbol.svg` includes the gold foreground logo, so do not place another logo on top of it. All background SVGs have inline vector geometry and gradients, with no external files, embedded raster images or scripts.
+
+## Preservation rules
+
+- Preserve all primary logo paths, proportions, diagonal breaks and gold/rim gradient stops.
+- Never stretch, rotate, recolour or simplify the primary gold mark.
+- Cropping and monochrome fills are for the decorative silhouette only.
+- Keep favicon/app-tile padding separate from ordinary logo clear space.
+- Retain the unmodified master alongside fitted and padded derivatives.
+- New visual experiments do not silently replace these approved specifications.

@@ -29,3 +29,16 @@ dl{margin:25px 0 24px}dl>div{display:grid;grid-template-columns:145px 1fr;gap:16
 @media(max-width:1100px){.identity{--symbol-size:clamp(200px,25vw,275px);gap:60px}}
 @media(max-width:720px){.desktop-break{display:none}body{padding:clamp(48px,8svh,72px) 32px 48px}.identity{--symbol-size:128px;grid-template-columns:1fr;gap:36px;width:min(440px,100%)}.identity-symbol{grid-row:1;justify-content:flex-start;padding:0}.identity-copy{padding:0}h1{font-size:39px;letter-spacing:-.8px;margin-bottom:22px}.description{font-size:17px;line-height:1.6;max-width:370px}.contact{font-size:16px;margin-top:29px}.details{gap:28px;margin-top:42px}.dialog-header{padding:21px 23px}.dialog-content{padding:25px 23px}.dialog-footer{padding:16px 23px}dl>div{grid-template-columns:1fr;gap:4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Approved SS3 composition, 2 November 2026. */
+body{--hero-top:clamp(88px,20svh,200px);position:relative;isolation:isolate;overflow-x:clip;background:linear-gradient(117deg,#0D1C2E 28%,#10243B 64%,#1B334A 100%)}
+.identity{position:relative;z-index:1}
+.scene{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.scene-frame{position:absolute;width:min(1040px,calc(100% - 160px));height:100%;left:50%;transform:translateX(-50%)}
+.shadow,.grid-field,.cell{position:absolute}
+.shadow{mask:url('assets/sectorlumen-symbol-fitted.svg') center/contain no-repeat;-webkit-mask:url('assets/sectorlumen-symbol-fitted.svg') center/contain no-repeat;aspect-ratio:211.7854/205.212;width:720px;right:-285px;top:calc(var(--hero-top) + 96px);background:linear-gradient(135deg,#354D63,#20384F);opacity:.48}
+.grid-field{width:768px;height:640px;right:-301px;top:calc(var(--hero-top) - 13.5px);background-image:linear-gradient(to right,#A0BBD21B 1px,transparent 1px),linear-gradient(to bottom,#A0BBD21B 1px,transparent 1px);background-size:96px 40px;mask-image:radial-gradient(ellipse at 47% 37%,black 20%,transparent 73%)}
+.cell{width:192px;height:40px;right:179px;top:calc(var(--hero-top) + 346.5px);border:1px solid #94AEC32B;background:#8AA9C307}
+.cell:after{content:'';position:absolute;width:4px;height:4px;right:-2px;bottom:-2px;background:#8DA8BB}
+@media(min-width:721px) and (max-width:1100px){.scene-frame{width:calc(100% - 112px);mask-image:linear-gradient(to right,transparent 56%,black 72%)}}
+@media(max-width:720px){body{background:linear-gradient(150deg,#11243A,#0D1C2E 50%,#192F45)}.scene{height:calc(clamp(48px,8svh,72px) + 160px);mask-image:linear-gradient(black 80%,transparent)}.scene-frame{width:calc(100% - 64px)}.shadow{width:330px;top:27px;right:-75px;opacity:.44}.grid-field{width:480px;height:260px;right:-80px;top:35px;background-size:64px 28px;mask-image:radial-gradient(ellipse at 50% 35%,black 15%,transparent 80%)}.cell{width:128px;height:28px;right:37px;top:175px}}
