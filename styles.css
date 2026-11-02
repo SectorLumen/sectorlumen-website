@@ -37,6 +37,7 @@ body{--hero-top:clamp(88px,20svh,200px);position:relative;isolation:isolate;over
 .scene-frame{position:absolute;width:min(1040px,calc(100% - 160px));height:100%;left:50%;transform:translateX(-50%)}
 .shadow,.grid-field,.cell{position:absolute}
 .shadow{mask:url('assets/sectorlumen-symbol-fitted.svg') center/contain no-repeat;-webkit-mask:url('assets/sectorlumen-symbol-fitted.svg') center/contain no-repeat;aspect-ratio:211.7854/205.212;width:720px;right:-285px;top:calc(var(--hero-top) + 96px);background:linear-gradient(135deg,#354D63,#20384F);opacity:.48}
+@media(min-width:721px){.shadow{-webkit-mask-image:url('assets/sectorlumen-symbol-fitted.svg'),linear-gradient(to bottom,#000 0%,#000000D1 20%,#0000006B 45%,#0000001F 70%,transparent 92%);mask-image:url('assets/sectorlumen-symbol-fitted.svg'),linear-gradient(to bottom,#000 0%,#000000D1 20%,#0000006B 45%,#0000001F 70%,transparent 92%);-webkit-mask-composite:source-in;mask-composite:intersect}}
 .grid-field{width:768px;height:640px;right:-301px;top:calc(var(--hero-top) - 13.5px);background-image:linear-gradient(to right,#A0BBD21B 1px,transparent 1px),linear-gradient(to bottom,#A0BBD21B 1px,transparent 1px);background-size:96px 40px;mask-image:radial-gradient(ellipse at 47% 37%,black 20%,transparent 73%)}
 .cell{width:192px;height:40px;right:179px;top:calc(var(--hero-top) + 346.5px);border:1px solid #94AEC32B;background:#8AA9C307}
 .cell:after{content:'';position:absolute;width:4px;height:4px;right:-2px;bottom:-2px;background:#8DA8BB}

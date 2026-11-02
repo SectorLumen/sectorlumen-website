@@ -59,7 +59,7 @@ These are CSS angles: 0° points upward and 90° points right. Do not reinterpre
 
 ### Decorative silhouette
 
-Use the exact fitted symbol as a monochrome mask. This is decorative secondary geometry, not a replacement for the gold logo. Its fill is `linear-gradient(135deg, #354D63, #20384F)`, with opacity 0.48 desktop and 0.44 mobile. No blur, animation or distortion is applied in approved SS3.
+Use the exact fitted symbol as a monochrome mask. This is decorative secondary geometry, not a replacement for the gold logo. Its fill is `linear-gradient(135deg, #354D63, #20384F)`, with opacity 0.48 desktop and 0.44 mobile. Desktop correction: multiply the silhouette by a vertical alpha fade, measured from its own top: 100% at 0%, 82% at 20%, 42% at 45%, 12% at 70%, and fully transparent at 92% of its height. CSS uses alpha bytes FF/D1/6B/1F/00; the SVG exports use those exact values. This makes the lower edge disappear even on tall screens. Keep the gold foreground logo fully opaque. Mobile retains its existing top-band fade. No blur, animation or distortion is applied.
 
 On a 1440 × 900 canvas, the decorative mark is 720 px wide at (805, 276), cropped at the right and bottom edges of the canvas. It preserves the symbol’s native aspect ratio. The foreground gold logo remains 275 px wide at (965, 206.5).
 
