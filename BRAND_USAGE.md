@@ -4,7 +4,7 @@ Working usage guidelines introduced on 2 November 2026 for the public landing pa
 
 ## Artwork and colour
 
-Use `assets/sectorlumen-symbol.svg` unchanged for the standalone symbol. Preserve the approved supplied geometry, breaks, diagonal, proportions and gold gradient. The supplied asset describes itself as a reconstructed vector, not the original designer source.
+Retain `assets/sectorlumen-symbol.svg` unchanged as the master. The landing uses `assets/sectorlumen-symbol-fitted.svg`, whose viewBox is fitted to the visible artwork for predictable edge alignment; paths, clips, gradient definitions and proportions are identical to the master. Preserve the approved supplied geometry, breaks, diagonal, proportions and gold gradient. The supplied asset describes itself as a reconstructed vector, not the original designer source.
 
 Use the approved navy `#0D1C2E` behind the gold symbol. Do not change the favicon background with the browser’s light/dark theme. Do not stretch the symbol or round its corners.
 
@@ -16,9 +16,13 @@ Let W be the width of the visible gold artwork, excluding transparent SVG bounds
 
 Keep at least W/4 of clear space on every side of the visible symbol, measured to other content or a container edge. This is a minimum exclusion zone, not a requirement to add padding inside every SVG. Larger layout spacing is appropriate where needed.
 
-On the landing page the desktop image box is 190 CSS px wide (approximately 175 px of visible gold); minimum clear space is therefore approximately 44 px. The symbol remains vertically centred against the complete copy block. Its column occupies 36.5% of the 1040 px maximum content width, moving its centre approximately 60 px inward from the earlier layout. The page title and copy positions remain unchanged at the maximum content width.
+On the landing page, the visible symbol is 175 CSS px wide, preserving the visible size of the preceding 190 px image with transparent bounds. Minimum clear space is therefore approximately 44 px.
 
-At 680 CSS px and below the symbol stacks above the text at 120 CSS px image width (approximately 110 px visible gold), with a 42 px row gap and 28 px page padding. This satisfies the approximately 28 px minimum clear space.
+The text-and-symbol group uses a centred 940 px maximum-width grid. The visible gold right edge sits on the grid’s right edge; the title and copy begin at its left edge. This produces equal outer margins instead of shifting the symbol inside an oversized right column. The minimum page gutter is 48 px above the stacked breakpoint. Do not use independent horizontal transforms to reposition the symbol.
+
+The visible gold top edge aligns with the visible top of the SectorLumen title. A 26.5 CSS px top inset compensates for the copy’s 18 px vertical padding and the 48 px Arial title’s line box. Keep the title and symbol on this shared visual top line, not merely on equal element-box coordinates.
+
+At 680 CSS px and below, the symbol stacks above the text at 110 CSS px of visible gold, with a 42 px row gap and 28 px minimum page gutter. The symbol and copy share the same left edge; the top inset resets to zero. The centred content group is at most 440 px wide. Minimum clear space is approximately 28 px.
 
 ## Favicon / compact tile exception
 

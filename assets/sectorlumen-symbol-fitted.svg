@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="406.1105 347.8436 211.7854 205.212" width="211.7854" height="205.212" role="img" aria-label="SectorLumen — fitted symbol, restrained gold">
+<title>SectorLumen — fitted symbol, restrained gold</title>
+<desc>Vector-only reconstruction from a 1024px JPEG. Fitted polygon, multi-stop gradient, approximate thin edge highlight. No embedded raster. This is not the designer's source. No wordmark included.</desc>
+<defs>
+<path id="symbol" d="M 617.7872,553.0556 L 449.3197,553.0550 L 459.9413,543.0668 L 607.2359,543.0700 L 607.1505,377.3340 L 432.7042,553.0483 L 406.1895,553.0373 L 406.1105,347.8552 L 603.1467,347.8436 L 592.4884,357.9942 L 416.3495,357.9931 L 416.2730,543.0643 L 427.7520,543.0891 L 617.8959,351.5911 Z"/>
+<clipPath id="shape-clip"><use href="#symbol"/></clipPath>
+<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="512" y1="340" x2="497.47497" y2="559.03680"><stop offset="0.00000000" stop-color="#ECDE75"/>
+<stop offset="0.09090909" stop-color="#E7D56F"/>
+<stop offset="0.18181818" stop-color="#E4CF6B"/>
+<stop offset="0.27272727" stop-color="#DFC768"/>
+<stop offset="0.36363636" stop-color="#DAC064"/>
+<stop offset="0.45454545" stop-color="#D5B960"/>
+<stop offset="0.54545455" stop-color="#D1B35D"/>
+<stop offset="0.63636364" stop-color="#CDAD5A"/>
+<stop offset="0.72727273" stop-color="#C9A757"/>
+<stop offset="0.81818182" stop-color="#C6A354"/>
+<stop offset="0.90909091" stop-color="#C39E52"/>
+<stop offset="1.00000000" stop-color="#C29D51"/></linearGradient>
+<linearGradient id="rim" gradientUnits="userSpaceOnUse" x1="512" y1="348" x2="512" y2="553"><stop stop-color="#EFEE98"/><stop offset="1" stop-color="#E6CC8D"/></linearGradient>
+</defs>
+
+<use href="#symbol" fill="url(#gold)"/>
+<g clip-path="url(#shape-clip)" fill="none" stroke-linejoin="miter">
+<use href="#symbol" stroke="#000000" stroke-opacity="0.075" stroke-width="4.2"/>
+<use href="#symbol" stroke="url(#rim)" stroke-opacity="0.94" stroke-width="2.2"/>
+</g>
+</svg>
