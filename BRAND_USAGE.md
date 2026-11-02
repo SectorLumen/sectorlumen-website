@@ -32,12 +32,14 @@ At 720 px and below, stack the 128 px-wide symbol above the text. Both share the
 
 ## Favicon / compact tile exception
 
-For compact browser and app tiles, use a square navy canvas with a centred symbol fitted into the middle 75% of its width and height: minimum padding is 12.5% of the full canvas on every side. Measure this from the visible gold artwork, not the transparent bounds of the original SVG. Fit uniformly; the slight aspect-ratio difference creates marginally more padding above and below.
+Updated on 2 November 2026 at the user's request to match the neighbouring wizard prototype’s application icon (`dist/assets/sectorlumen-app.svg`). This supersedes the earlier 12.5% canvas-padding rule.
 
-| Canvas | Minimum padding per side | Maximum visible artwork extent |
+Use a 96 × 96 navy canvas. Place the supplied symbol’s original `398 340 230 222` viewBox in a 62 × 62 box at x=17, y=17, with uniform scaling and centred aspect-ratio fitting. This reproduces the application icon’s spacing exactly, including the supplied artwork’s transparent bounds. The visible gold occupies approximately 59.47% of the navy square’s width and 57.62% of its height: roughly 20% navy margin on each side and 21% above and below.
+
+| Canvas | Visible gold width | Approximate side margin |
 | --- | --- | --- |
-| 16 × 16 px | 2 px | 12 px |
-| 32 × 32 px | 4 px | 24 px |
-| 64 × 64 px | 8 px | 48 px |
+| 16 × 16 px | 9.51 px | 3.2 px |
+| 32 × 32 px | 19.03 px | 6.5 px |
+| 64 × 64 px | 38.06 px | 13 px |
 
-`assets/favicon.svg` implements this rule on a 64 × 64 navy canvas. Its nested SVG fits the unmodified gold artwork into a 48 × 48 region at (8, 8). The visible result is 48 × approximately 46.51 px, centred on both axes. Do not add another layer of padding when consuming this asset.
+`assets/favicon.svg` implements this using the existing gold paths and gradients. The navy remains `#0D1C2E`, and the existing sharp background corners are preserved. Do not apply extra padding to the complete favicon. This rule concerns compact navy tiles; the landing-page hero symbol size and geometry are unchanged.

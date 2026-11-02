@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
 <title>SectorLumen</title>
-<rect width="64" height="64" fill="#0D1C2E"/>
-<!-- Compact icon: 12.5% canvas padding measured from visible gold artwork. -->
-<svg x="8" y="8" width="48" height="48" viewBox="406.1105 347.8436 211.7854 205.212" preserveAspectRatio="xMidYMid meet">
+<rect width="96" height="96" fill="#0D1C2E"/>
+<!-- Match the neighbouring prototype application icon: original symbol viewport in a 62/96 box at 17/96. Visible gold width is approximately 59.47% of the navy canvas. -->
+<svg x="17" y="17" width="62" height="62" viewBox="398 340 230 222" preserveAspectRatio="xMidYMid meet">
 <defs>
 <path id="symbol" d="M 617.7872,553.0556 L 449.3197,553.0550 L 459.9413,543.0668 L 607.2359,543.0700 L 607.1505,377.3340 L 432.7042,553.0483 L 406.1895,553.0373 L 406.1105,347.8552 L 603.1467,347.8436 L 592.4884,357.9942 L 416.3495,357.9931 L 416.2730,543.0643 L 427.7520,543.0891 L 617.8959,351.5911 Z"/>
 <clipPath id="shape-clip"><use href="#symbol"/></clipPath>
